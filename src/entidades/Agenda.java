@@ -27,18 +27,43 @@ public class Agenda {
 		return contatosLista;
 	}
 	
-
-	public void removerContato(Contato contato) {
-
-			if(contato.equals(contato)) {
-				contatosLista.remove(contatosLista);
-				System.out.println("Contato removido com sucesso.");
+	public List<Contato> buscaPeloTelefone(int telefone){
+		
+		for(Contato contato : contatosLista) {
+			
+			if(contato.getTelefone()==telefone) {
+				System.out.println("\n Nome encontrado ! Segue abaixo as informações: \n");
+				System.out.println(contato.toString());
 			}
 			else {
 				System.out.println("\n Contato não existe ! \n");
 			}
 		}
+		return contatosLista;
+	}
 	
+
+	public List<Contato> removerContato(Contato contatos) {
+		
+		try {
+		for(Contato contato : contatosLista) {
+			
+		if(contato.equals(contatos)) {
+				contatosLista.remove(contatos);
+				System.out.println("Contato removido com sucesso.");
+				return contatosLista;
+			}
+			else {
+				System.out.println("\n Contato não existe ! \n");
+			}
+	
+		}
+		}
+		catch(Exception e) {
+			
+		}
+		return contatosLista;
+	}
 		
 	}
 
